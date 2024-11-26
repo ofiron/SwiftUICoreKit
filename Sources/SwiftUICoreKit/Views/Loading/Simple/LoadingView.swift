@@ -27,6 +27,10 @@ public struct LoadingView: View {
 public struct FullScreenLoadingView: ViewModifier {
     @Binding public var isPresented: Bool
 
+    public init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+    }
+
     public func body(content: Content) -> some View {
         #if os(iOS)
         content
