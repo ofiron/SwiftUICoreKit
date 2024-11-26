@@ -8,9 +8,17 @@
 import AVFoundation
 import SwiftUI
 
+/// A view for selecting a document from the user's device.
+///
+/// Supports both iOS and macOS platforms.
 public struct DocumentSelectionView: View {
+    /// The selected URL, updated when a document is chosen.
     @Binding public var url: URL?
+
+    /// The allowed content types for the document picker.
     public let contentTypes: [UTType]
+
+    /// A closure to be executed when a document is selected.
     public let completion: (URL) -> Void
 
 #if os(OSX)

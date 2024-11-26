@@ -12,6 +12,7 @@
 #endif
 
 extension MultiPlatforms.View {
+    /// Sets or gets the background color of the view, compatible with both iOS and macOS.
     public var universalBackgroundColor: MultiPlatforms.Color? {
         set {
             #if os(iOS)

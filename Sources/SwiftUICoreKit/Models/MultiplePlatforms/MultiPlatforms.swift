@@ -13,7 +13,7 @@ import SwiftUI
     import AppKit
 #endif
 
-/// Enum for supporting both iOS and Mac OSX entities together in the same code
+/// Provides platform-agnostic type aliases for common UI elements.
 public enum MultiPlatforms {
 #if os(iOS)
     public typealias Color = UIColor
