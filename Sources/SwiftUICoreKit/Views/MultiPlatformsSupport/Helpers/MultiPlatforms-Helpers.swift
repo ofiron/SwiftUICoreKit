@@ -18,7 +18,7 @@ extension MultiPlatforms {
         /// Calculates the screen scale factor for the current platform.
         ///
         /// - Returns: The screen scale factor.
-        public static func screenFactor() -> CGFloat {
+        @MainActor public static func screenFactor() -> CGFloat {
             #if os(iOS)
             let factor = UIScreen.main.scale
             #elseif os(macOS)

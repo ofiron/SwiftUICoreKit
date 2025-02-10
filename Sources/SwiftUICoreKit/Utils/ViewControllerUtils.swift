@@ -8,7 +8,6 @@
 #if os(iOS)
 import UIKit
 #endif
-import SwiftUICoreKit
 
 /// A utility class for common view controller operations.
 public class ViewControllerUtils {
@@ -19,7 +18,7 @@ public class ViewControllerUtils {
     ///
     /// - Parameter base: The optional root view controller to start searching from.
     /// - Returns: The topmost view controller, or `nil` if not found.
-    public static func topViewController(base: ViewController? = nil) -> ViewController? {
+    @MainActor public static func topViewController(base: ViewController? = nil) -> ViewController? {
         #if os(iOS)
             inner_iOS_topViewController(base: base)
         #elseif os(macOS)
@@ -36,7 +35,7 @@ extension ViewControllerUtils {
     ///
     /// - Parameter base: An optional base view controller to start searching from.
     /// - Returns: The topmost visible view controller.
-    static func inner_iOS_topViewController(base: ViewController? = nil) -> ViewController? {
+    @MainActor static func inner_iOS_topViewController(base: ViewController? = nil) -> ViewController? {
         //let base = base ?? UIApplication.shared.keyWindow?.rootViewController
         let base = base ?? (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController
         if let nav = base as? UINavigationController {
