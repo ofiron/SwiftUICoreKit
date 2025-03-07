@@ -47,6 +47,20 @@ extension DeprecatedUI.Ios {
     @MainActor public static func getRootViewController() -> UIViewController? {
         // No warnings will appear here
         return UIApplication.shared.windows.first?.rootViewController
+        /*
+        if #available(iOS 13.0, *) {
+            // Use modern window scene API
+            return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .first?
+                .windows
+                .first?
+                .rootViewController
+        } else {
+            // Fallback to deprecated API for older iOS versions
+            return UIApplication.shared.windows.first?.rootViewController
+        }
+        */
     }
 }
 #endif
