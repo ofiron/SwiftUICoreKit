@@ -22,6 +22,10 @@ public enum MultiPlatforms {
     public typealias ViewRepresentable = UIViewRepresentable
     public typealias ViewController = UIViewController
     public typealias ViewControllerRepresentable = UIViewControllerRepresentable
+
+    /// Type alias for platform-appropriate pasteboard
+    /// - iOS: `UIPasteboard` from UIKit
+    public typealias Pasteboard = UIPasteboard
 #elseif os(OSX)
     public typealias Color = NSColor
     public typealias Image = NSImage
@@ -29,5 +33,9 @@ public enum MultiPlatforms {
     public typealias ViewRepresentable = NSViewRepresentable
     public typealias ViewController = NSViewController
     public typealias ViewControllerRepresentable = NSViewControllerRepresentable
+
+    /// Type alias for platform-appropriate pasteboard
+    /// - macOS: `NSPasteboard` from AppKit
+    public typealias Pasteboard = NSPasteboard
 #endif
 }
