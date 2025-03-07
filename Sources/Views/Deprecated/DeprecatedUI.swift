@@ -28,7 +28,7 @@ import UIKit
 /// ```
 //@available(iOS, deprecated: 15.0, message: "This entire struct should be removed after migrating to window scene APIs")
 public struct DeprecatedUI {
-    struct Ios {}
+    public struct Ios {}
 }
 
 #if os(iOS)
