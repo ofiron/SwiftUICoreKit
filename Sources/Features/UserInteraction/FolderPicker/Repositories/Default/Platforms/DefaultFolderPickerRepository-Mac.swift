@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import FoundationCoreKit
+import FoundationCoreKit
 #if os(macOS)
 import Cocoa
 

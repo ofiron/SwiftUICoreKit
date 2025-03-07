@@ -27,6 +27,10 @@ extension DefaultFolderPickerRepository {
 
 extension DefaultFolderPickerRepository.Ios: FolderPicker {
     public func selectFolder() async throws -> URL {
+        if presentingViewController != nil {
+            presentingViewController = await DeprecatedUI.Ios.getRootViewController()
+        }
+        
         guard presentingViewController != nil else {
             throw GenericError("\(type(of: self)) presented from a view controller that is not available")
         }
