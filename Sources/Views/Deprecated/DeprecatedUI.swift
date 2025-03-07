@@ -44,7 +44,7 @@ extension DeprecatedUI.Ios {
     /// 2. Replace with modern window scene API
     /// 3. Test with multiple scene support
 //    @available(iOS, deprecated: 15.0, message: "Use window scene API instead - see method documentation")
-    @MainActor static func getRootViewController() -> UIViewController? {
+    @MainActor public static func getRootViewController() -> UIViewController? {
         // No warnings will appear here
         return UIApplication.shared.windows.first?.rootViewController
     }
