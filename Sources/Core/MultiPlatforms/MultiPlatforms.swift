@@ -16,6 +16,7 @@ import SwiftUI
 /// Provides platform-agnostic type aliases for common UI elements.
 public enum MultiPlatforms {
 #if os(iOS)
+    public typealias Application = UIApplication
     public typealias Color = UIColor
     public typealias Image = UIImage
     public typealias View = UIView
@@ -27,6 +28,7 @@ public enum MultiPlatforms {
     /// - iOS: `UIPasteboard` from UIKit
     public typealias Pasteboard = UIPasteboard
 #elseif os(OSX)
+    public typealias Application = NSApplication
     public typealias Color = NSColor
     public typealias Image = NSImage
     public typealias View = NSView
