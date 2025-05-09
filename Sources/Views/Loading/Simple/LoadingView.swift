@@ -19,6 +19,8 @@ public struct LoadingView: View {
                 .scaleEffect(2)
         }
     }
+    
+    public init() {}
 }
 
 /// A view modifier to present a fullscreen loading view
