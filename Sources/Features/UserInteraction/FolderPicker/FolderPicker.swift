@@ -7,10 +7,16 @@
 
 import Foundation
 
-/// A protocol for allowing the user to select a folder.
+/// A protocol that defines an interface for presenting a UI to allow users to pick a folder.
 public protocol FolderPicker {
-    /// Presents a UI for the user to select a folder.
+    /// Presents a user interface for folder selection.
+    ///
+    /// This method asynchronously presents a folder picker UI to the user.
+    /// It returns the URL of the selected folder if the user completes the selection.
+    ///
     /// - Returns: The URL of the selected folder.
-    /// - Throws: An error if the folder selection fails.
+    /// - Throws:
+    ///   - `CancellationError` if the user cancels the folder selection.
+    ///   - Other errors if the folder selection fails due to other reasons.
     func selectFolder() async throws -> URL
 }
