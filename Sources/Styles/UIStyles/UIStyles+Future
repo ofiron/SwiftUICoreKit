@@ -1,0 +1,41 @@
+Future Theming Made Easy
+
+1. Centralized Customization (when ready):
+
+@main
+struct MyApp: App {
+    init() {
+        UIStyles.errorFont = .custom("Helvetica", size: 16)
+        UIStyles.errorColor = .orange
+    }
+}
+
+2. Dynamic Themes (if needed later):
+enum Theme {
+    case light, dark
+    
+    static func apply(_ theme: Theme) {
+        switch theme {
+        case .light:
+            UIStyles.errorColor = .red
+        case .dark:
+            UIStyles.errorColor = .orange
+        }
+    }
+}
+
+3. Key Documentation Additions
+/// - Important: To customize these values, set them early in your app's lifecycle:
+/// ```swift
+/// @main
+/// struct MyApp: App {
+///     init() {
+///         UIStyles.errorFont = .custom("YourFont", size: 16)
+///         UIStyles.errorColor = .yourColor
+///     }
+/// }
+/// ```
+public enum UIStyles {
+    // Implementation...
+}
+
